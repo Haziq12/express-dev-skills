@@ -40,7 +40,6 @@ function create(skill, callback) {
 
 function findByIdAndDelete(id, callback) {
   try { 
-    // Find the index based on the _id of the todo object
     const idx = skills.findIndex(skill => skill._id == parseInt(id))
     const deletedSkill = skills.splice(idx, 1)
     if (!deletedSkill.length ) throw new Error ('No skill was deleted')

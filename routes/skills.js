@@ -13,3 +13,8 @@ export {
   router
 }
 
+// post/get/delete are HTTP methods
+
+
+// index/show etc are CRUD methods
+// CRUD - Create Read Update Delete
