@@ -18,7 +18,29 @@ function show(req, res) {
   })
 }
 
+function create(req, res) {
+  // req.body - request on body means what exactly
+  // from notion: The properties on req.body will always match the values of the <input>’s name attributes:
+  // does that mean by setting the inputs name attribute that attribute will be the key to the input
+  skillsDb.create(req.body, function(error, skill) {
+    res.redirect('/skills')
+  })
+}
+
+function newSkills(req, res) {
+  res.render('skills/new')
+}
+
+function deleteSkill(req, res) {
+  skillsDb.findByIdAndDelete(req.params.id, function(error, todo) {
+    res.redirect('/skills')
+  })
+}
+
 export {
   index,
-  show
+  show,
+  newSkills as new,
+  create,
+  deleteSkill as delete
 }
